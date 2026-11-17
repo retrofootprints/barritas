@@ -1,0 +1,597 @@
+[
+  {
+    "file": "ean13-clean.png",
+    "bcid": "ean13",
+    "format": "EAN13",
+    "text": "5901234123457",
+    "kind": "clean"
+  },
+  {
+    "file": "ean13-hard.jpg",
+    "bcid": "ean13",
+    "format": "EAN13",
+    "text": "5901234123457",
+    "kind": "hard"
+  },
+  {
+    "file": "ean8-clean.png",
+    "bcid": "ean8",
+    "format": "EAN8",
+    "text": "96385074",
+    "kind": "clean"
+  },
+  {
+    "file": "ean8-hard.jpg",
+    "bcid": "ean8",
+    "format": "EAN8",
+    "text": "96385074",
+    "kind": "hard"
+  },
+  {
+    "file": "upca-clean.png",
+    "bcid": "upca",
+    "format": "UPCA",
+    "text": "036000291452",
+    "kind": "clean"
+  },
+  {
+    "file": "upca-hard.jpg",
+    "bcid": "upca",
+    "format": "UPCA",
+    "text": "036000291452",
+    "kind": "hard"
+  },
+  {
+    "file": "upce-clean.png",
+    "bcid": "upce",
+    "format": "UPCE",
+    "text": "01234565",
+    "kind": "clean"
+  },
+  {
+    "file": "upce-hard.jpg",
+    "bcid": "upce",
+    "format": "UPCE",
+    "text": "01234565",
+    "kind": "hard"
+  },
+  {
+    "file": "isbn-clean.png",
+    "bcid": "isbn",
+    "format": "ISBN",
+    "text": "978-1-56581-231-4",
+    "kind": "clean"
+  },
+  {
+    "file": "isbn-hard.jpg",
+    "bcid": "isbn",
+    "format": "ISBN",
+    "text": "978-1-56581-231-4",
+    "kind": "hard"
+  },
+  {
+    "file": "issn-clean.png",
+    "bcid": "issn",
+    "format": "EAN13",
+    "text": "9770311175001",
+    "kind": "clean"
+  },
+  {
+    "file": "issn-hard.jpg",
+    "bcid": "issn",
+    "format": "EAN13",
+    "text": "9770311175001",
+    "kind": "hard"
+  },
+  {
+    "file": "ismn-clean.png",
+    "bcid": "ismn",
+    "format": "EAN13",
+    "text": "979-0-2605-3211-3",
+    "kind": "clean"
+  },
+  {
+    "file": "ismn-hard.jpg",
+    "bcid": "ismn",
+    "format": "EAN13",
+    "text": "979-0-2605-3211-3",
+    "kind": "hard"
+  },
+  {
+    "file": "databaromni-clean.png",
+    "bcid": "databaromni",
+    "format": "DataBar",
+    "text": "(01)24012345678905",
+    "kind": "clean"
+  },
+  {
+    "file": "databaromni-hard.jpg",
+    "bcid": "databaromni",
+    "format": "DataBar",
+    "text": "(01)24012345678905",
+    "kind": "hard"
+  },
+  {
+    "file": "databarstacked-clean.png",
+    "bcid": "databarstacked",
+    "format": "DataBarStk",
+    "text": "(01)24012345678905",
+    "kind": "clean"
+  },
+  {
+    "file": "databarstacked-hard.jpg",
+    "bcid": "databarstacked",
+    "format": "DataBarStk",
+    "text": "(01)24012345678905",
+    "kind": "hard"
+  },
+  {
+    "file": "databarstackedomni-clean.png",
+    "bcid": "databarstackedomni",
+    "format": "DataBarStk",
+    "text": "(01)24012345678905",
+    "kind": "clean"
+  },
+  {
+    "file": "databarstackedomni-hard.jpg",
+    "bcid": "databarstackedomni",
+    "format": "DataBarStk",
+    "text": "(01)24012345678905",
+    "kind": "hard"
+  },
+  {
+    "file": "databarlimited-clean.png",
+    "bcid": "databarlimited",
+    "format": "DataBarLtd",
+    "text": "(01)15012345678907",
+    "kind": "clean"
+  },
+  {
+    "file": "databarlimited-hard.jpg",
+    "bcid": "databarlimited",
+    "format": "DataBarLtd",
+    "text": "(01)15012345678907",
+    "kind": "hard"
+  },
+  {
+    "file": "databarexpanded-clean.png",
+    "bcid": "databarexpanded",
+    "format": "DataBarExp",
+    "text": "(01)98898765432106(3202)012345(15)991231",
+    "kind": "clean"
+  },
+  {
+    "file": "databarexpanded-hard.jpg",
+    "bcid": "databarexpanded",
+    "format": "DataBarExp",
+    "text": "(01)98898765432106(3202)012345(15)991231",
+    "kind": "hard"
+  },
+  {
+    "file": "databarexpandedstacked-clean.png",
+    "bcid": "databarexpandedstacked",
+    "format": "DataBarExpStk",
+    "text": "(01)98898765432106(3202)012345(15)991231",
+    "kind": "clean"
+  },
+  {
+    "file": "databarexpandedstacked-hard.jpg",
+    "bcid": "databarexpandedstacked",
+    "format": "DataBarExpStk",
+    "text": "(01)98898765432106(3202)012345(15)991231",
+    "kind": "hard"
+  },
+  {
+    "file": "code128-clean.png",
+    "bcid": "code128",
+    "format": "Code128",
+    "text": "Barritas-128",
+    "kind": "clean"
+  },
+  {
+    "file": "code128-hard.jpg",
+    "bcid": "code128",
+    "format": "Code128",
+    "text": "Barritas-128",
+    "kind": "hard"
+  },
+  {
+    "file": "gs1-128-clean.png",
+    "bcid": "gs1-128",
+    "format": "Code128",
+    "text": "(01)09521234543213(10)ABC123",
+    "kind": "clean"
+  },
+  {
+    "file": "gs1-128-hard.jpg",
+    "bcid": "gs1-128",
+    "format": "Code128",
+    "text": "(01)09521234543213(10)ABC123",
+    "kind": "hard"
+  },
+  {
+    "file": "sscc18-clean.png",
+    "bcid": "sscc18",
+    "format": "Code128",
+    "text": "(00)095012345678901237",
+    "kind": "clean"
+  },
+  {
+    "file": "sscc18-hard.jpg",
+    "bcid": "sscc18",
+    "format": "Code128",
+    "text": "(00)095012345678901237",
+    "kind": "hard"
+  },
+  {
+    "file": "code39-clean.png",
+    "bcid": "code39",
+    "format": "Code39",
+    "text": "CODE39 TEST",
+    "kind": "clean"
+  },
+  {
+    "file": "code39-hard.jpg",
+    "bcid": "code39",
+    "format": "Code39",
+    "text": "CODE39 TEST",
+    "kind": "hard"
+  },
+  {
+    "file": "code39ext-clean.png",
+    "bcid": "code39ext",
+    "format": "Code39Ext",
+    "text": "Code39 ext!",
+    "kind": "clean"
+  },
+  {
+    "file": "code39ext-hard.jpg",
+    "bcid": "code39ext",
+    "format": "Code39Ext",
+    "text": "Code39 ext!",
+    "kind": "hard"
+  },
+  {
+    "file": "code32-clean.png",
+    "bcid": "code32",
+    "format": "Code32",
+    "text": "A012345676",
+    "kind": "clean"
+  },
+  {
+    "file": "code32-hard.jpg",
+    "bcid": "code32",
+    "format": "Code32",
+    "text": "A012345676",
+    "kind": "hard"
+  },
+  {
+    "file": "pzn-clean.png",
+    "bcid": "pzn",
+    "format": "PZN",
+    "text": "1234562",
+    "kind": "clean"
+  },
+  {
+    "file": "pzn-hard.jpg",
+    "bcid": "pzn",
+    "format": "PZN",
+    "text": "1234562",
+    "kind": "hard"
+  },
+  {
+    "file": "code93-clean.png",
+    "bcid": "code93",
+    "format": "Code93",
+    "text": "CODE93",
+    "kind": "clean"
+  },
+  {
+    "file": "code93-hard.jpg",
+    "bcid": "code93",
+    "format": "Code93",
+    "text": "CODE93",
+    "kind": "hard"
+  },
+  {
+    "file": "code93ext-clean.png",
+    "bcid": "code93ext",
+    "format": "Code93",
+    "text": "Code93 ext",
+    "kind": "clean"
+  },
+  {
+    "file": "code93ext-hard.jpg",
+    "bcid": "code93ext",
+    "format": "Code93",
+    "text": "Code93 ext",
+    "kind": "hard"
+  },
+  {
+    "file": "interleaved2of5-clean.png",
+    "bcid": "interleaved2of5",
+    "format": "ITF",
+    "text": "1234567890",
+    "kind": "clean"
+  },
+  {
+    "file": "interleaved2of5-hard.jpg",
+    "bcid": "interleaved2of5",
+    "format": "ITF",
+    "text": "1234567890",
+    "kind": "hard"
+  },
+  {
+    "file": "itf14-clean.png",
+    "bcid": "itf14",
+    "format": "ITF14",
+    "text": "15400141288763",
+    "kind": "clean"
+  },
+  {
+    "file": "itf14-hard.jpg",
+    "bcid": "itf14",
+    "format": "ITF14",
+    "text": "15400141288763",
+    "kind": "hard"
+  },
+  {
+    "file": "rationalizedcodabar-clean.png",
+    "bcid": "rationalizedCodabar",
+    "format": "Codabar",
+    "text": "A40156B",
+    "kind": "clean"
+  },
+  {
+    "file": "rationalizedcodabar-hard.jpg",
+    "bcid": "rationalizedCodabar",
+    "format": "Codabar",
+    "text": "A40156B",
+    "kind": "hard"
+  },
+  {
+    "file": "telepen-clean.png",
+    "bcid": "telepen",
+    "format": "Telepen",
+    "text": "Telepen",
+    "kind": "clean"
+  },
+  {
+    "file": "telepen-hard.jpg",
+    "bcid": "telepen",
+    "format": "Telepen",
+    "text": "Telepen",
+    "kind": "hard"
+  },
+  {
+    "file": "telepennumeric-clean.png",
+    "bcid": "telepennumeric",
+    "format": "Telepen",
+    "text": "01234567",
+    "kind": "clean"
+  },
+  {
+    "file": "telepennumeric-hard.jpg",
+    "bcid": "telepennumeric",
+    "format": "Telepen",
+    "text": "01234567",
+    "kind": "hard"
+  },
+  {
+    "file": "qrcode-clean.png",
+    "bcid": "qrcode",
+    "format": "QRCode",
+    "text": "https://retrofootprints.github.io/barritas/",
+    "kind": "clean"
+  },
+  {
+    "file": "qrcode-hard.jpg",
+    "bcid": "qrcode",
+    "format": "QRCode",
+    "text": "https://retrofootprints.github.io/barritas/",
+    "kind": "hard"
+  },
+  {
+    "file": "gs1qrcode-clean.png",
+    "bcid": "gs1qrcode",
+    "format": "QRCode",
+    "text": "(01)09521234543213(17)261231(10)ABC123",
+    "kind": "clean"
+  },
+  {
+    "file": "gs1qrcode-hard.jpg",
+    "bcid": "gs1qrcode",
+    "format": "QRCode",
+    "text": "(01)09521234543213(17)261231(10)ABC123",
+    "kind": "hard"
+  },
+  {
+    "file": "microqrcode-clean.png",
+    "bcid": "microqrcode",
+    "format": "MicroQRCode",
+    "text": "MICROQR1",
+    "kind": "clean"
+  },
+  {
+    "file": "microqrcode-hard.jpg",
+    "bcid": "microqrcode",
+    "format": "MicroQRCode",
+    "text": "MICROQR1",
+    "kind": "hard"
+  },
+  {
+    "file": "rectangularmicroqrcode-clean.png",
+    "bcid": "rectangularmicroqrcode",
+    "format": "RMQRCode",
+    "text": "rMQR 12345",
+    "kind": "clean"
+  },
+  {
+    "file": "rectangularmicroqrcode-hard.jpg",
+    "bcid": "rectangularmicroqrcode",
+    "format": "RMQRCode",
+    "text": "rMQR 12345",
+    "kind": "hard"
+  },
+  {
+    "file": "datamatrix-clean.png",
+    "bcid": "datamatrix",
+    "format": "DataMatrix",
+    "text": "Data Matrix sample",
+    "kind": "clean"
+  },
+  {
+    "file": "datamatrix-hard.jpg",
+    "bcid": "datamatrix",
+    "format": "DataMatrix",
+    "text": "Data Matrix sample",
+    "kind": "hard"
+  },
+  {
+    "file": "datamatrixrectangular-clean.png",
+    "bcid": "datamatrixrectangular",
+    "format": "DataMatrix",
+    "text": "DMRE 1234",
+    "kind": "clean"
+  },
+  {
+    "file": "datamatrixrectangular-hard.jpg",
+    "bcid": "datamatrixrectangular",
+    "format": "DataMatrix",
+    "text": "DMRE 1234",
+    "kind": "hard"
+  },
+  {
+    "file": "gs1datamatrix-clean.png",
+    "bcid": "gs1datamatrix",
+    "format": "DataMatrix",
+    "text": "(01)09521234543213(17)261231(10)ABC123(21)XYZ",
+    "kind": "clean"
+  },
+  {
+    "file": "gs1datamatrix-hard.jpg",
+    "bcid": "gs1datamatrix",
+    "format": "DataMatrix",
+    "text": "(01)09521234543213(17)261231(10)ABC123(21)XYZ",
+    "kind": "hard"
+  },
+  {
+    "file": "azteccode-clean.png",
+    "bcid": "azteccode",
+    "format": "Aztec",
+    "text": "Aztec sample text",
+    "kind": "clean"
+  },
+  {
+    "file": "azteccode-hard.jpg",
+    "bcid": "azteccode",
+    "format": "Aztec",
+    "text": "Aztec sample text",
+    "kind": "hard"
+  },
+  {
+    "file": "azteccodecompact-clean.png",
+    "bcid": "azteccodecompact",
+    "format": "Aztec",
+    "text": "Compact",
+    "kind": "clean"
+  },
+  {
+    "file": "azteccodecompact-hard.jpg",
+    "bcid": "azteccodecompact",
+    "format": "Aztec",
+    "text": "Compact",
+    "kind": "hard"
+  },
+  {
+    "file": "aztecrune-clean.png",
+    "bcid": "aztecrune",
+    "format": "AztecRune",
+    "text": "025",
+    "kind": "clean"
+  },
+  {
+    "file": "aztecrune-hard.jpg",
+    "bcid": "aztecrune",
+    "format": "AztecRune",
+    "text": "025",
+    "kind": "hard"
+  },
+  {
+    "file": "pdf417-clean.png",
+    "bcid": "pdf417",
+    "format": "PDF417",
+    "text": "PDF417 sample text",
+    "kind": "clean"
+  },
+  {
+    "file": "pdf417-hard.jpg",
+    "bcid": "pdf417",
+    "format": "PDF417",
+    "text": "PDF417 sample text",
+    "kind": "hard"
+  },
+  {
+    "file": "pdf417compact-clean.png",
+    "bcid": "pdf417compact",
+    "format": "CompactPDF417",
+    "text": "Compact PDF417",
+    "kind": "clean"
+  },
+  {
+    "file": "pdf417compact-hard.jpg",
+    "bcid": "pdf417compact",
+    "format": "CompactPDF417",
+    "text": "Compact PDF417",
+    "kind": "hard"
+  },
+  {
+    "file": "micropdf417-clean.png",
+    "bcid": "micropdf417",
+    "format": "MicroPDF417",
+    "text": "MicroPDF417",
+    "kind": "clean"
+  },
+  {
+    "file": "micropdf417-hard.jpg",
+    "bcid": "micropdf417",
+    "format": "MicroPDF417",
+    "text": "MicroPDF417",
+    "kind": "hard"
+  },
+  {
+    "file": "maxicode-clean.png",
+    "bcid": "maxicode",
+    "format": "MaxiCode",
+    "text": "MaxiCode sample",
+    "kind": "clean"
+  },
+  {
+    "file": "maxicode-hard.jpg",
+    "bcid": "maxicode",
+    "format": "MaxiCode",
+    "text": "MaxiCode sample",
+    "kind": "hard"
+  },
+  {
+    "file": "qrcode-inverted.png",
+    "bcid": "qrcode",
+    "format": "QRCode",
+    "text": "https://retrofootprints.github.io/barritas/",
+    "kind": "inverted"
+  },
+  {
+    "file": "datamatrix-tiny.png",
+    "bcid": "datamatrix",
+    "format": "DataMatrix",
+    "text": "TINY",
+    "kind": "tiny"
+  },
+  {
+    "file": "ean13-tiny.png",
+    "bcid": "ean13",
+    "format": "EAN13",
+    "text": "5901234123457",
+    "kind": "tiny"
+  }
+]

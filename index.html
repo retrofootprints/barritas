@@ -36,7 +36,128 @@
 
   <main id="main">
     <section id="panel-scan" role="tabpanel" aria-labelledby="tab-scan" tabindex="0">
-      <p class="muted">Scanner coming in the next milestone.</p>
+      <div class="grid-2">
+        <div>
+          <div class="card">
+            <div class="row">
+              <button type="button" id="scan-camera" class="primary">Start camera</button>
+              <label class="btn" for="scan-file">Open images…</label>
+              <input id="scan-file" type="file" accept="image/*" multiple class="sr-only">
+              <button type="button" id="scan-freeze" hidden>Pause</button>
+              <button type="button" id="scan-rescan" hidden title="Decode the current image again with the current settings">Re-scan</button>
+              <button type="button" id="scan-again" class="primary" hidden>Scan again</button>
+            </div>
+            <div class="row" id="camera-controls" hidden>
+              <label class="field"><span>Camera</span><select id="cam-device"></select></label>
+              <button type="button" id="cam-torch" aria-pressed="false" hidden>Torch</button>
+              <label class="field" id="cam-zoom-wrap" hidden><span>Zoom <output id="cam-zoom-val"></output></span><input type="range" id="cam-zoom"></label>
+            </div>
+            <div class="row" id="camera-controls-2" hidden>
+              <label class="check"><input type="checkbox" data-opt="roi"> Centre box only (faster)</label>
+            </div>
+            <div class="stage" id="scan-stage">
+              <div class="media" id="scan-media" hidden>
+                <video id="scan-video" playsinline muted hidden></video>
+                <canvas id="scan-still" class="still" hidden></canvas>
+                <canvas id="scan-overlay" class="overlay"></canvas>
+                <div class="roi-box" id="scan-roi" hidden></div>
+                <span class="status-chip" id="scan-status" hidden></span>
+              </div>
+              <div class="placeholder" id="scan-placeholder">Start the camera, open an image, drop one here, or paste one (Ctrl/⌘+V).</div>
+            </div>
+            <p class="dropzone-hint" id="scan-hint">Images are processed on this device only.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card">
+            <details class="settings" id="scan-settings">
+              <summary>Scan settings</summary>
+              <div class="fields">
+                <label class="field" id="opt-mode-wrap" hidden><span>Look for</span>
+                  <select data-opt="mode">
+                    <option value="barcodes">Barcodes</option>
+                    <option value="fiducials">Fiducial markers</option>
+                    <option value="both">Both</option>
+                  </select>
+                </label>
+                <label class="field"><span>Format</span><select data-opt="format" id="opt-format"></select></label>
+                <label class="field"><span>Engine</span>
+                  <select data-opt="engine">
+                    <option value="auto">Auto</option>
+                    <option value="native">Native (BarcodeDetector)</option>
+                    <option value="zxing">zxing-wasm</option>
+                  </select>
+                </label>
+              </div>
+              <p class="small muted" id="engine-info"></p>
+              <fieldset>
+                <legend>zxing reader</legend>
+                <div class="row">
+                  <label class="check"><input type="checkbox" data-opt="tryHarder"> Try harder</label>
+                  <label class="check"><input type="checkbox" data-opt="tryRotate"> Try rotate</label>
+                  <label class="check"><input type="checkbox" data-opt="tryInvert"> Try invert</label>
+                  <label class="check"><input type="checkbox" data-opt="tryDownscale"> Try downscale</label>
+                </div>
+                <div class="fields">
+                  <label class="field"><span>Max symbols</span>
+                    <select data-opt="maxSymbols"><option value="1">1</option><option value="many">Many</option></select>
+                  </label>
+                  <label class="field"><span>Binarizer (advanced)</span>
+                    <select data-opt="binarizer">
+                      <option value="LocalAverage">Local average (default)</option>
+                      <option value="GlobalHistogram">Global histogram</option>
+                      <option value="FixedThreshold">Fixed threshold</option>
+                      <option value="BoolCast">Bool cast (fastest)</option>
+                    </select>
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset id="fid-opts" hidden>
+                <legend>Fiducial markers</legend>
+                <div class="fields">
+                  <label class="field"><span>Dictionary</span><select data-opt="dict" id="opt-dict"></select></label>
+                  <label class="field"><span>Max bit errors</span>
+                    <select data-opt="maxErrors">
+                      <option value="auto">Auto (safe)</option>
+                      <option value="0">0 (exact)</option>
+                      <option value="1">1</option><option value="2">2</option><option value="3">3</option>
+                      <option value="4">4</option><option value="5">5</option>
+                    </select>
+                  </label>
+                  <label class="field"><span>Marker size (mm)</span><input type="number" data-opt="markerMm" min="1" step="any" inputmode="decimal"></label>
+                  <label class="field"><span>Horizontal field of view (°)</span><input type="number" data-opt="fov" min="10" max="170" step="any" inputmode="decimal"></label>
+                  <label class="field"><span>Focal length override (35 mm equiv., mm)</span><input type="number" data-opt="focal35" min="1" step="any" inputmode="decimal" placeholder="from FOV"></label>
+                </div>
+                <p class="small muted">Pose (distance, rotation) needs the printed marker size (black square edge) and the camera's focal length. Without calibration the values are approximate.</p>
+              </fieldset>
+              <fieldset>
+                <legend>Behaviour</legend>
+                <div class="row">
+                  <label class="check"><input type="checkbox" data-opt="singleShot"> Stop after first result (camera)</label>
+                  <label class="check"><input type="checkbox" data-opt="beep"> Beep / vibrate</label>
+                </div>
+              </fieldset>
+            </details>
+          </div>
+
+          <div class="card">
+            <h2>Results</h2>
+            <div id="scan-results" class="results">
+              <p class="muted small">Nothing scanned yet.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="row"><h2>Recent</h2></div>
+            <ul class="history" id="scan-history"></ul>
+            <div class="row">
+              <label class="check small"><input type="checkbox" data-opt="persistHistory"> Remember on this device</label>
+              <button type="button" class="small" id="history-clear">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="panel-generate" role="tabpanel" aria-labelledby="tab-generate" tabindex="0" hidden>

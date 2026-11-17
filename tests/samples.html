@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample decode test — Barritas</title>
+  <link rel="icon" href="../icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="module" src="samples.js"></script>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <h2>Sample images decode test</h2>
+      <p class="muted">Decodes every image in <code>samples/</code> with the scanner's default settings (zxing engine; add <code>?engine=auto</code> to use the native detector where available).</p>
+      <p id="summary" class="msg warn">Running…</p>
+      <div class="table-wrap">
+        <table class="formats-table" id="out">
+          <thead><tr><th>File</th><th>Kind</th><th>Status</th><th>Time</th><th>Decoded</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

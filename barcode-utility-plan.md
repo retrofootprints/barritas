@@ -92,31 +92,31 @@ A single-page web app to **scan**, **decode** and **generate** barcodes and fidu
 **Inputs**
 - [ ] Live camera (rear camera default, device picker)
 - [ ] Torch toggle and zoom (where `MediaTrackCapabilities` allows)
-- [ ] Image upload (multiple files)
-- [ ] Drag-and-drop
-- [ ] Paste from clipboard
+- [x] Image upload (multiple files)
+- [x] Drag-and-drop
+- [x] Paste from clipboard
 - [ ] Pause / freeze-frame and re-scan the frozen frame with different settings
 
 **Mode**
 - [ ] Barcodes / Fiducials / Both (alternate frames in "Both")
 
 **Engine**
-- [ ] Auto: native `BarcodeDetector` if available *and* supports the chosen format → else zxing-wasm
-- [ ] Force native / force zxing (for comparison)
-- [ ] Show which engine produced each result
+- [x] Auto: native `BarcodeDetector` if available *and* supports the chosen format → else zxing-wasm
+- [x] Force native / force zxing (for comparison)
+- [x] Show which engine produced each result
 
 **Format selection**
-- [ ] Auto (All)
-- [ ] Groups: Linear, Matrix, Retail, Industrial, GS1
-- [ ] Single format (full list from zxing-wasm)
+- [x] Auto (All)
+- [x] Groups: Linear, Matrix, Retail, Industrial, GS1
+- [x] Single format (full list from zxing-wasm)
 
 **Reader options (zxing)**
-- [ ] Try harder
-- [ ] Try rotate
-- [ ] Try invert (white-on-black codes)
-- [ ] Try downscale
-- [ ] Max number of symbols (1 / many)
-- [ ] Binarizer choice (advanced)
+- [x] Try harder
+- [x] Try rotate
+- [x] Try invert (white-on-black codes)
+- [x] Try downscale
+- [x] Max number of symbols (1 / many)
+- [x] Binarizer choice (advanced)
 
 **Fiducial options**
 - [ ] Dictionary: ArUco original, ARUCO_MIP_36h12, AprilTag 36h11 / 25h9 / 16h5, ARTag, …
@@ -135,13 +135,13 @@ A single-page web app to **scan**, **decode** and **generate** barcodes and fidu
 - [ ] Optional region-of-interest crop (centre box) for speed
 
 **Output**
-- [ ] Overlay: quad outline + label on video/canvas
-- [ ] Result card: format, text, raw bytes (hex), symbology identifier, EC level, orientation
-- [ ] Copy / open link / share buttons
-- [ ] Beep / vibrate on new result (toggle)
+- [x] Overlay: quad outline + label on video/canvas
+- [x] Result card: format, text, raw bytes (hex), symbology identifier, EC level, orientation
+- [x] Copy / open link / share buttons
+- [x] Beep / vibrate on new result (toggle)
 - [ ] De-duplicate repeated reads
 - [ ] Single-shot by default: stop scanning after the first result, "Scan again" button
-- [ ] Short recent list (last ~10, in-memory or localStorage, clearable). No export.
+- [x] Short recent list (last ~10, in-memory or localStorage, clearable). No export.
 
 ### 4.2 Payload interpreters
 
@@ -209,12 +209,12 @@ Run on every decoded result; show a structured view when recognised, raw otherwi
 
 ## 6. GitHub Pages checklist
 
-- [ ] Repo created; Pages enabled: **Deploy from a branch → `main` / root** (no Actions)
-- [ ] HTTPS enforced (default on `*.github.io`)
-- [ ] CSP `<meta>` tag: `default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; img-src 'self' data: blob:; media-src 'self' blob:`
-- [ ] `.wasm` self-hosted under `vendor/`; zxing-wasm pointed at it (`prepareZXingModule` / `locateFile`)
-- [ ] All asset paths relative (works under `/<repo>/` sub-path)
-- [ ] Add `.nojekyll` (avoids Jekyll ignoring `_`-prefixed files)
+- [x] Repo created; Pages enabled: **Deploy from a branch → `main` / root** (no Actions)
+- [x] HTTPS enforced (default on `*.github.io`)
+- [x] CSP `<meta>` tag: `default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; img-src 'self' data: blob:; media-src 'self' blob:`
+- [x] `.wasm` self-hosted under `vendor/`; zxing-wasm pointed at it (`prepareZXingModule` / `locateFile`)
+- [x] All asset paths relative (works under `/<repo>/` sub-path)
+- [x] Add `.nojekyll` (avoids Jekyll ignoring `_`-prefixed files)
 - [ ] Optional custom domain + DNS
 - [ ] Service worker scope matches the repo sub-path
 
@@ -222,7 +222,7 @@ Run on every decoded result; show a structured view when recognised, raw otherwi
 
 ## 7. Testing
 
-- [ ] `samples/` folder: at least one clean + one hard image per format
+- [x] `samples/` folder: at least one clean + one hard image per format
 - [ ] Generated-then-decoded round-trip test for every generator format
 - [ ] Payload parser unit tests with fixed strings (incl. multi-leg BCBP)
 - [ ] Device matrix:

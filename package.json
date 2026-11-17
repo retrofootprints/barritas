@@ -1,0 +1,9 @@
+{
+  "name": "barritas",
+  "private": true,
+  "type": "module",
+  "description": "No dependencies and no build step. This file only marks the .js sources as ES modules for the Node unit tests.",
+  "scripts": {
+    "test": "node --test tests/"
+  }
+}

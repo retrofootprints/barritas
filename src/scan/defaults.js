@@ -1,0 +1,21 @@
+// Default scan settings (shared by the Scan tab and the tests).
+export const DEFAULTS = {
+  mode: 'barcodes',
+  format: '',
+  engine: 'auto',
+  tryHarder: true,
+  tryRotate: true,
+  tryInvert: true,
+  tryDownscale: true,
+  maxSymbols: 'many',
+  binarizer: 'LocalAverage',
+  dict: 'ARUCO_MIP_36h12',
+  maxErrors: 'auto',
+  markerMm: 50,
+  fov: 65,
+  focal35: '',
+  singleShot: true,
+  beep: true,
+  roi: false,
+  persistHistory: false,
+};
