@@ -183,13 +183,13 @@ Run on every decoded result; show a structured view when recognised, raw otherwi
 
 ### 4.5 Cross-cutting
 
-- [ ] Responsive / mobile-first layout
-- [ ] Dark mode
-- [ ] Accessible: keyboard nav, ARIA live region for results
-- [ ] Offline support (service worker / PWA manifest, installable)
-- [ ] Settings persisted in localStorage (wrapped in try/catch)
+- [x] Responsive / mobile-first layout
+- [x] Dark mode
+- [x] Accessible: keyboard nav, ARIA live region for results
+- [x] Offline support (service worker / PWA manifest, installable)
+- [x] Settings persisted in localStorage (wrapped in try/catch)
 - [x] Shareable URL params for generator state (e.g. `?f=qrcode&d=hello`)
-- [ ] "About" panel: supported formats, libraries, licences, privacy note
+- [x] "About" panel: supported formats, libraries, licences, privacy note
 
 ---
 
@@ -216,7 +216,7 @@ Run on every decoded result; show a structured view when recognised, raw otherwi
 - [x] All asset paths relative (works under `/<repo>/` sub-path)
 - [x] Add `.nojekyll` (avoids Jekyll ignoring `_`-prefixed files)
 - [ ] Optional custom domain + DNS
-- [ ] Service worker scope matches the repo sub-path
+- [x] Service worker scope matches the repo sub-path
 
 ---
 

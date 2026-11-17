@@ -1,0 +1,23 @@
+{
+  "name": "Barritas — barcode utility",
+  "short_name": "Barritas",
+  "description": "Scan, decode and generate barcodes and fiducial markers. Everything stays on your device.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f7f9",
+  "theme_color": "#1f5fd1",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Scan", "url": "./#scan" },
+    { "name": "Generate barcode", "url": "./#generate" },
+    { "name": "Generate marker", "url": "./#fiducials" }
+  ]
+}

@@ -7,8 +7,13 @@
   <meta name="referrer" content="no-referrer">
   <title>Barritas — barcode utility</title>
   <meta name="description" content="Scan, decode and generate barcodes and fiducial markers in your browser. Nothing leaves your device.">
-  <meta name="theme-color" content="#1f5fd1">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1d23" media="(prefers-color-scheme: dark)">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Barritas">
   <link rel="stylesheet" href="css/style.css">
   <script type="module" src="app.js"></script>
 </head>
@@ -315,10 +320,7 @@
     </section>
 
     <section id="panel-about" role="tabpanel" aria-labelledby="tab-about" tabindex="0" hidden>
-      <div class="card">
-        <h2>About Barritas</h2>
-        <p>Scan, decode and generate barcodes and fiducial markers. Everything runs in your browser: no server, no tracking, no third-party requests.</p>
-      </div>
+      <p class="muted">Loading…</p>
     </section>
   </main>
 

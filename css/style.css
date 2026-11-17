@@ -133,6 +133,7 @@ p { margin: 0 0 10px; }
 }
 
 .grid-2 { display: grid; gap: 14px; grid-template-columns: 1fr; }
+.grid-2 > * { min-width: 0; }
 @media (min-width: 860px) { .grid-2 { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); } }
 
 .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }

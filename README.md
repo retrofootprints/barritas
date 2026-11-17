@@ -53,7 +53,8 @@ To update a library: download the new npm tarball, copy the same files over, upd
 
 ## Tests
 
-- `node --test tests/` — payload parser unit tests (no dependencies).
+- `node --test tests/` — payload parser unit tests and a service-worker precache check (no dependencies).
+- `tests/pose.html` — renders markers in perspective at known poses and checks the estimated distance/angles.
 - `tests/roundtrip.html` — open in a browser; generates every generator format with bwip-js and decodes it with zxing.
 - `tests/samples.html` — decodes every image in `samples/` and compares with the expected text.
 
