@@ -3,6 +3,8 @@
 // Open tests/make-samples.html and use the download links (or let a test harness collect window.__samples).
 import { GEN_FORMATS, applyCheckDigit } from '../src/generate/formats.js';
 import { buildOptions, renderCanvas } from '../src/generate/render.js';
+import { getDictionary } from '../src/fiducial/detect.js';
+import { markerCanvas } from '../src/fiducial/marker.js';
 
 // Deterministic noise so regenerated samples are identical.
 function rng(seed) {
@@ -103,6 +105,29 @@ const dm = onWhite(await renderCanvas(buildOptions('datamatrix', 'TINY', { scale
 samples.push({ file: 'datamatrix-tiny.png', bcid: 'datamatrix', format: 'DataMatrix', text: 'TINY', kind: 'tiny', url: tiny(dm, 48).toDataURL('image/png') });
 const e13 = onWhite(await renderCanvas(buildOptions('ean13', '5901234123457', { scale: 2, quiet: 0, includetext: true })), 20);
 samples.push({ file: 'ean13-tiny.png', bcid: 'ean13', format: 'EAN13', text: '5901234123457', kind: 'tiny', url: tiny(e13, 190).toDataURL('image/png') });
+
+// Fiducial markers: a clean one, a "photo" one, and a barcode + marker together (for "Both" mode).
+for (const [dictName, id, kind] of [['ARUCO_MIP_36h12', 3, 'clean'], ['APRILTAG_36h11', 7, 'hard'], ['ARUCO_4X4_1000', 42, 'clean']]) {
+  const d = await getDictionary(dictName);
+  const m = onWhite(markerCanvas(d.codes[id], d.size, { cellPx: 16, quiet: 1 }), 24);
+  const img = kind === 'hard' ? harden(m, seed++, { angle: 14, blur: 0.8, scale: 0.6 }) : m;
+  const file = `marker-${dictName.toLowerCase()}-${id}-${kind}.${kind === 'hard' ? 'jpg' : 'png'}`;
+  samples.push({ file, marker: { dict: dictName, id }, kind: `marker ${kind}`, url: kind === 'hard' ? img.toDataURL('image/jpeg', 0.75) : img.toDataURL('image/png') });
+}
+{
+  const d = await getDictionary('ARUCO_MIP_36h12');
+  const m = markerCanvas(d.codes[11], d.size, { cellPx: 14, quiet: 1 });
+  const q = await renderCanvas(buildOptions('qrcode', 'Both modes', { scale: 5, quiet: 4 }));
+  const c = document.createElement('canvas');
+  c.width = m.width + q.width + 120;
+  c.height = Math.max(m.height, q.height) + 80;
+  const ctx = c.getContext('2d');
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, c.width, c.height);
+  ctx.drawImage(m, 40, 40);
+  ctx.drawImage(q, m.width + 80, 40);
+  samples.push({ file: 'both-qrcode-and-marker.png', bcid: 'qrcode', format: 'QRCode', text: 'Both modes', marker: { dict: 'ARUCO_MIP_36h12', id: 11 }, kind: 'both', url: c.toDataURL('image/png') });
+}
 
 const manifest = samples.map(({ url, ...rest }) => rest);
 window.__samples = { done: true, samples, manifest };

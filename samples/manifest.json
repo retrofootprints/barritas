@@ -593,5 +593,40 @@
     "format": "EAN13",
     "text": "5901234123457",
     "kind": "tiny"
+  },
+  {
+    "file": "marker-aruco_mip_36h12-3-clean.png",
+    "marker": {
+      "dict": "ARUCO_MIP_36h12",
+      "id": 3
+    },
+    "kind": "marker clean"
+  },
+  {
+    "file": "marker-apriltag_36h11-7-hard.jpg",
+    "marker": {
+      "dict": "APRILTAG_36h11",
+      "id": 7
+    },
+    "kind": "marker hard"
+  },
+  {
+    "file": "marker-aruco_4x4_1000-42-clean.png",
+    "marker": {
+      "dict": "ARUCO_4X4_1000",
+      "id": 42
+    },
+    "kind": "marker clean"
+  },
+  {
+    "file": "both-qrcode-and-marker.png",
+    "bcid": "qrcode",
+    "format": "QRCode",
+    "text": "Both modes",
+    "marker": {
+      "dict": "ARUCO_MIP_36h12",
+      "id": 11
+    },
+    "kind": "both"
   }
 ]

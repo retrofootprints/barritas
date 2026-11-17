@@ -76,6 +76,37 @@ export function barcodeCard(r, { source } = {}) {
   return card;
 }
 
+const deg = (v) => `${v >= 0 ? '+' : ''}${v.toFixed(1)}°`;
+const mm = (v) => `${Math.round(v)} mm`;
+
+/** Card for a detected fiducial marker (with approximate pose when available). */
+export function markerCard(m, { dictLabel, markerMm, focalPx, source, live } = {}) {
+  const card = h('article.result');
+  card.append(h('header',
+    h('span.badge.accent', `ID ${m.id}`),
+    h('span.badge', dictLabel),
+    m.hamming ? h('span.badge', { title: 'Bits corrected' }, `${m.hamming} bit${m.hamming > 1 ? 's' : ''} corrected`) : null,
+    source ? h('span.small.muted', source) : null,
+  ));
+  const pairs = [];
+  if (m.pose) {
+    const [x, y, z] = m.pose.translation;
+    pairs.push(
+      ['Distance', `≈ ${mm(m.pose.distance)}`],
+      ['Yaw / pitch / roll', `${deg(m.pose.euler.yaw)} / ${deg(m.pose.euler.pitch)} / ${deg(m.pose.euler.roll)}`],
+      ['Translation (x, y, z)', `${mm(x)}, ${mm(y)}, ${mm(z)}`],
+    );
+  }
+  pairs.push(['Corners (px)', m.corners.map((c) => `${Math.round(c.x)},${Math.round(c.y)}`).join('  ')]);
+  card.append(kv(pairs));
+  if (m.pose && !live) {
+    card.append(h('p.small.muted', `Pose assumes a ${markerMm} mm marker and a focal length of ${Math.round(focalPx)} px estimated from the field of view, so values are approximate (no camera calibration). Camera axes: x right, y up, z forward.`));
+  } else if (!m.pose && !live) {
+    card.append(h('p.small.muted', 'Set the printed marker size in the scan settings to estimate distance and rotation.'));
+  }
+  return card;
+}
+
 export function messageCard(text, kind = 'warn') {
   return h(`p.msg.${kind}`, text);
 }

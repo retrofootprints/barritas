@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pose test — Barritas</title>
+  <link rel="icon" href="../icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="module" src="pose.js"></script>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <h2>Marker pose estimation test</h2>
+      <p class="muted">A 50 mm ArUco marker is rendered in perspective (1280×720, 65° horizontal field of view) at known positions and rotations, then detected. This checks the pose maths; real-world accuracy also depends on the focal-length estimate.</p>
+      <p id="summary" class="msg warn">Running…</p>
+      <div class="table-wrap">
+        <table class="formats-table" id="out">
+          <thead><tr><th>True pose</th><th>Estimated distance</th><th>Estimated angles (°)</th><th>OK</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

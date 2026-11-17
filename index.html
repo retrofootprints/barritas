@@ -74,15 +74,15 @@
             <details class="settings" id="scan-settings">
               <summary>Scan settings</summary>
               <div class="fields">
-                <label class="field" id="opt-mode-wrap" hidden><span>Look for</span>
+                <label class="field" id="opt-mode-wrap"><span>Look for</span>
                   <select data-opt="mode">
                     <option value="barcodes">Barcodes</option>
                     <option value="fiducials">Fiducial markers</option>
                     <option value="both">Both</option>
                   </select>
                 </label>
-                <label class="field"><span>Format</span><select data-opt="format" id="opt-format"></select></label>
-                <label class="field"><span>Engine</span>
+                <label class="field" id="opt-format-wrap"><span>Format</span><select data-opt="format" id="opt-format"></select></label>
+                <label class="field" id="opt-engine-wrap"><span>Engine</span>
                   <select data-opt="engine">
                     <option value="auto">Auto</option>
                     <option value="native">Native (BarcodeDetector)</option>
@@ -91,7 +91,7 @@
                 </label>
               </div>
               <p class="small muted" id="engine-info"></p>
-              <fieldset>
+              <fieldset id="zxing-opts">
                 <legend>zxing reader</legend>
                 <div class="row">
                   <label class="check"><input type="checkbox" data-opt="tryHarder"> Try harder</label>
@@ -260,7 +260,58 @@
     </section>
 
     <section id="panel-fiducials" role="tabpanel" aria-labelledby="tab-fiducials" tabindex="0" hidden>
-      <p class="muted">Marker generator coming soon.</p>
+      <div class="grid-2">
+        <div>
+          <div class="card stack">
+            <h2>Marker</h2>
+            <div class="fields">
+              <label class="field"><span>Dictionary</span><select id="fid-dict"></select></label>
+              <label class="field"><span>ID <span id="fid-range"></span></span><input type="number" id="fid-id" min="0" step="1" value="0" inputmode="numeric"></label>
+              <label class="field"><span>Marker size (mm, black square)</span><input type="number" id="fid-size" min="5" max="500" step="any" value="50" inputmode="decimal"></label>
+              <label class="field"><span>White border (cells)</span><input type="number" id="fid-quiet" min="0" max="10" step="1" value="1" inputmode="numeric"></label>
+            </div>
+            <label class="check"><input type="checkbox" id="fid-label" checked> Label under the marker</label>
+            <p class="small muted" id="fid-info"></p>
+          </div>
+
+          <div class="card stack">
+            <h2>Print sheet</h2>
+            <div class="fields">
+              <label class="field"><span>IDs</span><input type="text" id="fid-ids" value="0-11" placeholder="e.g. 0-11, 20, 30-33"></label>
+              <label class="field"><span>Paper</span>
+                <select id="fid-paper"><option value="A4">A4</option><option value="Letter">US Letter</option></select>
+              </label>
+              <label class="field"><span>Gap (mm)</span><input type="number" id="fid-gap" min="0" max="50" step="any" value="6" inputmode="decimal"></label>
+            </div>
+            <div class="row">
+              <label class="check"><input type="checkbox" id="fid-sheet-labels" checked> ID labels</label>
+              <label class="check"><input type="checkbox" id="fid-cut" checked> Cut marks</label>
+            </div>
+            <div class="row">
+              <button type="button" id="fid-sheet-preview">Preview sheet</button>
+              <button type="button" id="fid-print" class="primary">Print…</button>
+              <button type="button" id="fid-sheet-svg">Download SVG pages</button>
+            </div>
+            <p class="msg small" id="fid-sheet-msg"></p>
+            <p class="small muted">Sizes are exact in millimetres when printed at 100% / “actual size”. Each page has a 50 mm bar to check the scale.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="card stack">
+            <div class="preview checker" id="fid-preview" aria-live="polite"><p class="muted small">Loading…</p></div>
+            <div class="row">
+              <button type="button" id="fid-svg">Download SVG</button>
+              <button type="button" id="fid-png">Download PNG (300 dpi)</button>
+            </div>
+            <p class="msg small" id="fid-verify"></p>
+          </div>
+          <div class="card" id="fid-sheet-card" hidden>
+            <h2>Sheet preview</h2>
+            <div class="sheet-preview" id="fid-sheet"></div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="panel-about" role="tabpanel" aria-labelledby="tab-about" tabindex="0" hidden>

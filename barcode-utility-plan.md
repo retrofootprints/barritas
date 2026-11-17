@@ -98,7 +98,7 @@ A single-page web app to **scan**, **decode** and **generate** barcodes and fidu
 - [x] Pause / freeze-frame and re-scan the frozen frame with different settings
 
 **Mode**
-- [ ] Barcodes / Fiducials / Both (alternate frames in "Both")
+- [x] Barcodes / Fiducials / Both (alternate frames in "Both")
 
 **Engine**
 - [x] Auto: native `BarcodeDetector` if available *and* supports the chosen format → else zxing-wasm
@@ -119,15 +119,15 @@ A single-page web app to **scan**, **decode** and **generate** barcodes and fidu
 - [x] Binarizer choice (advanced)
 
 **Fiducial options**
-- [ ] Dictionary: ArUco original, ARUCO_MIP_36h12, AprilTag 36h11 / 25h9 / 16h5, ARTag, …
-- [ ] Max Hamming distance / error tolerance
+- [x] Dictionary: ArUco original, ARUCO_MIP_36h12, AprilTag 36h11 / 25h9 / 16h5, ARTag, …
+- [x] Max Hamming distance / error tolerance
 
 **Fiducial pose estimation (in v1)**
-- [ ] Inputs: printed marker size (mm) and camera focal length
-- [ ] Focal length: estimate from an assumed field of view (default ~65° horizontal), with a manual override field
-- [ ] Output per marker: distance (mm), rotation (yaw / pitch / roll), translation vector
-- [ ] Overlay: draw 3D axes (X red, Y green, Z blue) on each detected marker
-- [ ] Show a note that accuracy depends on the focal-length estimate (no calibration in v1)
+- [x] Inputs: printed marker size (mm) and camera focal length
+- [x] Focal length: estimate from an assumed field of view (default ~65° horizontal), with a manual override field
+- [x] Output per marker: distance (mm), rotation (yaw / pitch / roll), translation vector
+- [x] Overlay: draw 3D axes (X red, Y green, Z blue) on each detected marker
+- [x] Show a note that accuracy depends on the focal-length estimate (no calibration in v1)
 
 **Performance**
 - [x] Decode in a Web Worker, transfer `ImageData`/`ImageBitmap`
@@ -175,11 +175,11 @@ Run on every decoded result; show a structured view when recognised, raw otherwi
 
 ### 4.4 Generate fiducials tab
 
-- [ ] Dictionary + ID picker (with valid ID range shown)
-- [ ] Marker size (mm) and border width
-- [ ] SVG output (crisp for print), PNG download
-- [ ] Print sheet: grid of IDs, exact mm sizing, labels, cut marks
-- [ ] Verify by detecting the rendered marker
+- [x] Dictionary + ID picker (with valid ID range shown)
+- [x] Marker size (mm) and border width
+- [x] SVG output (crisp for print), PNG download
+- [x] Print sheet: grid of IDs, exact mm sizing, labels, cut marks
+- [x] Verify by detecting the rendered marker
 
 ### 4.5 Cross-cutting
 
