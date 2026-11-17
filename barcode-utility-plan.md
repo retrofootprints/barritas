@@ -249,7 +249,7 @@ Run on every decoded result; show a structured view when recognised, raw otherwi
 
 **Open questions**
 
-- [ ] Repo name / URL — to be provided when starting in Claude Code
+- [x] Repo name / URL → https://github.com/retrofootprints/barritas (Pages: https://retrofootprints.github.io/barritas/)
 
 **Resolved**
 
