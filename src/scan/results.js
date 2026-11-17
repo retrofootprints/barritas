@@ -22,7 +22,9 @@ function renderPayload(p) {
     box.append(h('div.sub', sec.title), kv(sec.fields));
   }
   if (p.links?.length) {
-    box.append(h('div.row.actions', p.links.map((l) => h('a.btn.small', { href: l.href, target: '_blank', rel: 'noopener noreferrer' }, l.label))));
+    box.append(h('div.row.actions', p.links.map((l) => (l.blob
+      ? h('a.btn.small', { href: URL.createObjectURL(l.blob), download: l.download || 'download' }, l.label)
+      : h('a.btn.small', { href: l.href, target: '_blank', rel: 'noopener noreferrer' }, l.label)))));
   }
   return box;
 }

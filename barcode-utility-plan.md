@@ -147,15 +147,15 @@ A single-page web app to **scan**, **decode** and **generate** barcodes and fidu
 
 Run on every decoded result; show a structured view when recognised, raw otherwise. **All of these are in v1.** They are plain text parsers with no cost or dependencies.
 
-- [ ] **IATA BCBP (M1)** — name, PNR, from/to, carrier, flight, Julian date, class, seat, sequence, multi-leg
-- [ ] **GS1** — parse AIs (GTIN, batch, expiry, serial…) from `]C1`, `]e0`, `]d2`, `]Q3`, FNC1/GS separators
-- [ ] **URL**, **mailto**, **tel**, **sms**, **geo**
-- [ ] **Wi-Fi** (`WIFI:T:…;S:…;P:…;;`)
-- [ ] **vCard** / **MeCard**
-- [ ] **EPC / SEPA payment QR** (`BCD` header)
-- [ ] **Portuguese AT invoice QR** (`A:` NIF … `H:` ATCUD fields)
-- [ ] **AAMVA** driver licence (PDF417)
-- [ ] Fallback: text + hex dump + detected encoding
+- [x] **IATA BCBP (M1)** — name, PNR, from/to, carrier, flight, Julian date, class, seat, sequence, multi-leg
+- [x] **GS1** — parse AIs (GTIN, batch, expiry, serial…) from `]C1`, `]e0`, `]d2`, `]Q3`, FNC1/GS separators
+- [x] **URL**, **mailto**, **tel**, **sms**, **geo**
+- [x] **Wi-Fi** (`WIFI:T:…;S:…;P:…;;`)
+- [x] **vCard** / **MeCard**
+- [x] **EPC / SEPA payment QR** (`BCD` header)
+- [x] **Portuguese AT invoice QR** (`A:` NIF … `H:` ATCUD fields)
+- [x] **AAMVA** driver licence (PDF417)
+- [x] Fallback: text + hex dump + detected encoding
 
 ### 4.3 Generate barcodes tab
 
@@ -224,7 +224,7 @@ Run on every decoded result; show a structured view when recognised, raw otherwi
 
 - [x] `samples/` folder: at least one clean + one hard image per format
 - [x] Generated-then-decoded round-trip test for every generator format
-- [ ] Payload parser unit tests with fixed strings (incl. multi-leg BCBP)
+- [x] Payload parser unit tests with fixed strings (incl. multi-leg BCBP)
 - [ ] Device matrix:
   - [ ] Android Chrome (native `BarcodeDetector`)
   - [ ] iOS Safari (zxing fallback)

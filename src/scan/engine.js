@@ -54,6 +54,19 @@ export function zxingOptions(s) {
   };
 }
 
+// zxing's HRI text mode writes control characters as "<LF>", "<GS>", … For payloads that use them
+// (AAMVA licences, vCards in PDF417, …) rebuild the text from the raw bytes instead.
+const CONTROL_TOKEN = /<(NUL|SOH|STX|ETX|EOT|ENQ|ACK|BEL|BS|HT|LF|VT|FF|CR|SO|SI|DLE|DC[1-4]|NAK|SYN|ETB|CAN|EM|SUB|ESC|FS|GS|RS|US|DEL)>/;
+
+export function textWithControls(text, bytes) {
+  if (!CONTROL_TOKEN.test(text) || !bytes?.length) return text;
+  try {
+    return new TextDecoder('utf-8', { fatal: true }).decode(bytes);
+  } catch {
+    return new TextDecoder('windows-1252').decode(bytes);
+  }
+}
+
 function quadFromPosition(p) {
   if (!p) return null;
   return [p.topLeft, p.topRight, p.bottomRight, p.bottomLeft].map(({ x, y }) => ({ x, y }));
@@ -68,7 +81,7 @@ async function decodeZxing(imageData, settings, transfer) {
     engine: 'zxing',
     format: r.format,
     formatLabel: formatLabel(r.format),
-    text: r.text,
+    text: textWithControls(r.text, r.bytes),
     bytes: r.bytes,
     quad: quadFromPosition(r.position),
     symbologyIdentifier: r.symbologyIdentifier,
