@@ -159,19 +159,19 @@ Run on every decoded result; show a structured view when recognised, raw otherwi
 
 ### 4.3 Generate barcodes tab
 
-- [ ] Format dropdown grouped by family (bwip-js `bcid`)
-- [ ] Data input with per-format validation and helpful errors
-- [ ] Auto check digits (EAN/UPC/ITF-14)
-- [ ] Per-format options:
-  - [ ] QR: EC level, version, mask, Micro QR / rMQR
-  - [ ] Aztec: EC %, compact/full, layers
-  - [ ] Data Matrix: size, square/rectangular, GS1 mode
-  - [ ] PDF417: columns, rows, EC level, compact
-  - [ ] Linear: bar height, include text, text font size, add-ons
-- [ ] Common: scale, quiet zone, foreground/background colour, rotation
-- [ ] Output: live SVG preview, download SVG / PNG, copy image
-- [ ] **Verify**: decode generated image with zxing and show pass/fail
-- [ ] Templates: Wi-Fi, vCard, URL, GS1 builder, sample BCBP builder, EPC payment
+- [x] Format dropdown grouped by family (bwip-js `bcid`)
+- [x] Data input with per-format validation and helpful errors
+- [x] Auto check digits (EAN/UPC/ITF-14)
+- [x] Per-format options:
+  - [x] QR: EC level, version, mask, Micro QR / rMQR
+  - [x] Aztec: EC %, compact/full, layers
+  - [x] Data Matrix: size, square/rectangular, GS1 mode
+  - [x] PDF417: columns, rows, EC level, compact
+  - [x] Linear: bar height, include text, text font size, add-ons
+- [x] Common: scale, quiet zone, foreground/background colour, rotation
+- [x] Output: live SVG preview, download SVG / PNG, copy image
+- [x] **Verify**: decode generated image with zxing and show pass/fail
+- [x] Templates: Wi-Fi, vCard, URL, GS1 builder, sample BCBP builder, EPC payment
 
 ### 4.4 Generate fiducials tab
 
@@ -188,7 +188,7 @@ Run on every decoded result; show a structured view when recognised, raw otherwi
 - [ ] Accessible: keyboard nav, ARIA live region for results
 - [ ] Offline support (service worker / PWA manifest, installable)
 - [ ] Settings persisted in localStorage (wrapped in try/catch)
-- [ ] Shareable URL params for generator state (e.g. `?f=qrcode&d=hello`)
+- [x] Shareable URL params for generator state (e.g. `?f=qrcode&d=hello`)
 - [ ] "About" panel: supported formats, libraries, licences, privacy note
 
 ---
@@ -223,7 +223,7 @@ Run on every decoded result; show a structured view when recognised, raw otherwi
 ## 7. Testing
 
 - [x] `samples/` folder: at least one clean + one hard image per format
-- [ ] Generated-then-decoded round-trip test for every generator format
+- [x] Generated-then-decoded round-trip test for every generator format
 - [ ] Payload parser unit tests with fixed strings (incl. multi-leg BCBP)
 - [ ] Device matrix:
   - [ ] Android Chrome (native `BarcodeDetector`)

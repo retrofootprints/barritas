@@ -161,7 +161,102 @@
     </section>
 
     <section id="panel-generate" role="tabpanel" aria-labelledby="tab-generate" tabindex="0" hidden>
-      <p class="muted">Barcode generator coming soon.</p>
+      <div class="grid-2">
+        <div>
+          <div class="card stack">
+            <label class="field"><span>Format</span><select id="gen-format"></select></label>
+            <div>
+              <div class="small muted">Templates</div>
+              <div class="templates" id="gen-templates"></div>
+              <div class="template-form card" id="gen-template-form" hidden></div>
+            </div>
+            <label class="field"><span>Data</span><textarea id="gen-data" rows="4" spellcheck="false" autocomplete="off"></textarea></label>
+            <p id="gen-data-msg" class="msg small"></p>
+
+            <details class="settings" id="gen-options" open>
+              <summary>Options</summary>
+              <fieldset class="opt-group" data-kinds="qr">
+                <legend>QR</legend>
+                <div class="fields">
+                  <label class="field"><span>Error correction</span>
+                    <select data-gopt="eclevel" data-kinds="qr">
+                      <option value="">Auto (M)</option><option value="L">L (7%)</option><option value="M">M (15%)</option><option value="Q">Q (25%)</option><option value="H">H (30%)</option>
+                    </select>
+                  </label>
+                  <label class="field"><span>Version / size</span><select data-gopt="qrversion" id="gen-qrversion"></select></label>
+                  <label class="field"><span>Mask</span>
+                    <select data-gopt="mask"><option value="">Auto</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select>
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset class="opt-group" data-kinds="aztec">
+                <legend>Aztec</legend>
+                <div class="fields">
+                  <label class="field"><span>Error correction (%)</span><input type="number" data-gopt="azecpercent" min="5" max="95" placeholder="23"></label>
+                  <label class="field"><span>Symbol type</span>
+                    <select data-gopt="azformat"><option value="">Auto</option><option value="full">Full range</option><option value="compact">Compact</option></select>
+                  </label>
+                  <label class="field"><span>Layers</span><input type="number" data-gopt="azlayers" min="1" max="32" placeholder="auto"></label>
+                </div>
+              </fieldset>
+              <fieldset class="opt-group" data-kinds="datamatrix">
+                <legend>Data Matrix</legend>
+                <div class="fields">
+                  <label class="field"><span>Shape</span>
+                    <select data-gopt="dmformat"><option value="">Square</option><option value="rectangle">Rectangular</option></select>
+                  </label>
+                  <label class="field"><span>Size</span><select data-gopt="dmversion" id="gen-dmversion"></select></label>
+                </div>
+                <label class="check"><input type="checkbox" data-gopt="dmgs1"> GS1 mode (data as (AI)value…)</label>
+              </fieldset>
+              <fieldset class="opt-group" data-kinds="pdf417">
+                <legend>PDF417</legend>
+                <div class="fields">
+                  <label class="field"><span>Columns</span><input type="number" data-gopt="pdfcolumns" min="1" max="30" placeholder="auto"></label>
+                  <label class="field"><span>Rows</span><input type="number" data-gopt="pdfrows" min="3" max="90" placeholder="auto"></label>
+                  <label class="field"><span>EC level (0–8)</span><input type="number" data-gopt="pdfeclevel" min="0" max="8" placeholder="auto"></label>
+                </div>
+                <label class="check"><input type="checkbox" data-gopt="pdfcompact"> Compact (truncated)</label>
+              </fieldset>
+              <fieldset class="opt-group" data-kinds="linear ean postal">
+                <legend>Bars and text</legend>
+                <div class="fields">
+                  <label class="field"><span>Bar height (mm)</span><input type="number" data-gopt="height" min="2" max="100" step="any" placeholder="auto"></label>
+                  <label class="field" data-kinds="linear ean"><span>Text size (pt)</span><input type="number" data-gopt="textsize" min="4" max="40" placeholder="auto"></label>
+                  <label class="field" data-kinds="ean"><span>Add-on (2 or 5 digits)</span><input type="text" data-gopt="addon" inputmode="numeric" maxlength="5"></label>
+                </div>
+                <label class="check" data-kinds="linear ean"><input type="checkbox" data-gopt="includetext"> Show human-readable text</label>
+              </fieldset>
+              <fieldset>
+                <legend>Appearance</legend>
+                <div class="fields">
+                  <label class="field"><span>Scale</span><input type="number" data-gopt="scale" min="1" max="12"></label>
+                  <label class="field"><span>Quiet zone (padding)</span><input type="number" data-gopt="quiet" min="0" max="40"></label>
+                  <label class="field"><span>Foreground</span><input type="color" data-gopt="fg"></label>
+                  <label class="field"><span>Background</span><input type="color" data-gopt="bg"></label>
+                  <label class="field"><span>Rotation</span>
+                    <select data-gopt="rotate"><option value="N">0°</option><option value="R">90°</option><option value="I">180°</option><option value="L">270°</option></select>
+                  </label>
+                </div>
+              </fieldset>
+            </details>
+          </div>
+        </div>
+
+        <div>
+          <div class="card stack">
+            <div class="preview" id="gen-preview" aria-live="polite"><p class="muted small">Preview</p></div>
+            <p id="gen-error" class="msg err" role="alert"></p>
+            <div class="row">
+              <button type="button" id="gen-svg">Download SVG</button>
+              <button type="button" id="gen-png">Download PNG</button>
+              <button type="button" id="gen-copy">Copy image</button>
+              <button type="button" id="gen-link">Copy link</button>
+            </div>
+            <p id="gen-verify" class="msg small"></p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="panel-fiducials" role="tabpanel" aria-labelledby="tab-fiducials" tabindex="0" hidden>

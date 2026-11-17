@@ -253,3 +253,10 @@ footer.app-footer { max-width: 1100px; margin: 0 auto; padding: 8px 16px 32px; c
   body.printing #print-root svg:last-child { page-break-after: auto; break-after: auto; }
   body { background: #fff; }
 }
+
+/* ---------- Generator extras ---------- */
+.preview.stale > * { opacity: .35; }
+.gs1-row select { flex: 1 1 200px; width: auto; }
+.gs1-row input { flex: 1 1 140px; width: auto; }
+.template-form { background: var(--surface-2); box-shadow: none; }
+.template-form .fields { margin-bottom: 8px; }
