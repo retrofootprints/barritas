@@ -90,12 +90,12 @@ A single-page web app to **scan**, **decode** and **generate** barcodes and fidu
 ### 4.1 Scan tab
 
 **Inputs**
-- [ ] Live camera (rear camera default, device picker)
-- [ ] Torch toggle and zoom (where `MediaTrackCapabilities` allows)
+- [x] Live camera (rear camera default, device picker)
+- [x] Torch toggle and zoom (where `MediaTrackCapabilities` allows)
 - [x] Image upload (multiple files)
 - [x] Drag-and-drop
 - [x] Paste from clipboard
-- [ ] Pause / freeze-frame and re-scan the frozen frame with different settings
+- [x] Pause / freeze-frame and re-scan the frozen frame with different settings
 
 **Mode**
 - [ ] Barcodes / Fiducials / Both (alternate frames in "Both")
@@ -130,17 +130,17 @@ A single-page web app to **scan**, **decode** and **generate** barcodes and fidu
 - [ ] Show a note that accuracy depends on the focal-length estimate (no calibration in v1)
 
 **Performance**
-- [ ] Decode in a Web Worker, transfer `ImageData`/`ImageBitmap`
-- [ ] Throttle to ~10 fps; skip frames while busy
-- [ ] Optional region-of-interest crop (centre box) for speed
+- [x] Decode in a Web Worker, transfer `ImageData`/`ImageBitmap`
+- [x] Throttle to ~10 fps; skip frames while busy
+- [x] Optional region-of-interest crop (centre box) for speed
 
 **Output**
 - [x] Overlay: quad outline + label on video/canvas
 - [x] Result card: format, text, raw bytes (hex), symbology identifier, EC level, orientation
 - [x] Copy / open link / share buttons
 - [x] Beep / vibrate on new result (toggle)
-- [ ] De-duplicate repeated reads
-- [ ] Single-shot by default: stop scanning after the first result, "Scan again" button
+- [x] De-duplicate repeated reads
+- [x] Single-shot by default: stop scanning after the first result, "Scan again" button
 - [x] Short recent list (last ~10, in-memory or localStorage, clearable). No export.
 
 ### 4.2 Payload interpreters
